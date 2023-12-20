@@ -61,6 +61,8 @@ export const updateEvent: RequestHandler = async (req, res) => {
     const result = await events.doMatches(parseInt(id));
 
     if (!result) return res.json({ error: 'Grupos impossíveis de sortear' });
+
+    
   } else {
     await people.update({ id_event: parseInt(id) }, { matched: '' })
   }
